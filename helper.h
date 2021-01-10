@@ -2,11 +2,11 @@
 #define MEMORY_SHARE
 
 #include<stdbool.h>
+#define SIZE 4096
+#define FILENAME "temp.txt"
 
-int Size = 4096;
-char * file = "temp";
 char * attach_memory(char * filename, int size);
-int detach_memory(char * block);
-int destroy_memory(char * filename);
+bool detach_memory(char * block);
+bool destroy_memory(char * filename);
 
-#endif MEMORY_SHARE
+#endif

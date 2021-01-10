@@ -13,7 +13,7 @@ static int get_shared_id(char * filename, int size){
         printf("ftok failed\n");
         exit(0);
     }
-    int id = shmget(key, size, 0644 | IPC_CREAT) // gives a block id 
+    int id = shmget(key, size, 0644 | IPC_CREAT); // gives a block id 
     if(id == SHM_ERROR){
         printf("shmget failed\n");
         exit(0);
@@ -23,7 +23,7 @@ static int get_shared_id(char * filename, int size){
 
 char * attach_memory(char * filename, int size){
     int id = get_shared_id(filename, size);
-    char * res = shmat(id, 0, NULL); // returns the address to be used for shared memory
+    char * res = shmat(id, 0, 0); // returns the address to be used for shared memory
     if(res == (char *) SHM_ERROR){
         printf("attaching memory failed\n");
         exit(0);

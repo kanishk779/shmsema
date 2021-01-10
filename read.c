@@ -9,9 +9,9 @@ int main(int argc, char ** argv){
         printf("usage - %s no args\n", argv[0]);
         exit(0);
     }
-    char *mem = attach_memory(filename, size);
+    char *mem = attach_memory(FILENAME, SIZE);
     if(mem == NULL){
-        printf("failed to get the shared memory (write.c)\n");
+        printf("failed to get the shared memory (read.c)\n");
         exit(0);
     }
     printf("Reading %s : \n", mem);
