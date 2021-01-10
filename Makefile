@@ -18,7 +18,7 @@
 # 	rm -rf *.dSYM *.o $(EXE)
 CC = gcc
 CFLAGS = -g -Wall
-EXE = write read
+EXE = write read destroy
 
 all: $(EXE)
 
@@ -26,6 +26,10 @@ write: write.o helper.o
 	$(CC) $(CFLAGS) write.o helper.o -o write
 read: read.o helper.o
 	$(CC) $(CFLAGS) read.o helper.o -o read
+destroy: destroy.o helper.o
+	$(CC) $(CFLAGS) destroy.o helper.o -o destroy
+destroy.o:
+	$(CC) $(CFLAGS) -c destroy.c helper.h
 read.o:
 	$(CC) $(CFLAGS) -c read.c helper.h
 write.o: write.c helper.h

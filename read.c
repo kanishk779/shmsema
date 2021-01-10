@@ -14,7 +14,7 @@ int main(int argc, char ** argv){
         printf("failed to get the shared memory (read.c)\n");
         exit(0);
     }
-    printf("Reading %s : \n", mem);
+    printf("Reading : %s \n", mem);
     // detach after reading
     detach_memory(mem);
     

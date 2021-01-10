@@ -14,7 +14,7 @@ int main(int argc, char ** argv){
         printf("failed to get the shared memory (write.c)\n");
         exit(0);
     }
-    printf("Writing %s : \n", argv[1]);
+    printf("Writing : %s \n", argv[1]);
     strncpy(mem, argv[1], SIZE);
 
     detach_memory(mem);
